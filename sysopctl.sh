@@ -98,8 +98,47 @@ case $MAIN_COMMAND in
             df -h
         else
             echo "Error: Unknown disk subcommand."
-            help
+            show_help
             exit 1
         fi
+        ;;
+
+    # Part 3 | Advanced Level
+    process)
+        if [ "$1" == "monitor" ]; then
+            echo "Monitoring system processes (press q to quit):"
+            top
+        else
+            echo "Error: Unknown process subcommand."
+            show_help
+            exit 1
+        fi
+        ;;
+
+    logs)
+        if [ "$1" == "analyze" ]; then
+            echo "Analyzing recent critical logs:"
+            sudo journalctl -p 3 -b | tail -n 20
+        else
+            echo "Error: Unknown logs subcommand."
+            show_help
+            exit 1
+        fi
+        ;;
+
+    backup)
+        if [ -z "$1" ]; then
+            echo "Error: Please specify a path to backup."
+            exit 1
+        fi
+        echo "Starting backup for path: $1"
+        rsync -av --progress "$1" /rsync_backup/  # Adjust destination as needed
+        echo "Backup completed."
+        ;;
+
+    *)
+        echo "Error: Unknown command."
+        show_help
+        exit 1
         ;;
 esac
