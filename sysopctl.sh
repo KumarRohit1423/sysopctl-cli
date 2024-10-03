@@ -90,4 +90,16 @@ case $MAIN_COMMAND in
             exit 1
         fi
         ;;
+
+    # Part 2 | Level Intermediate
+    disk)
+        if [ "$1" == "usage" ]; then
+            echo "Disk usage statistics by partition:"
+            df -h
+        else
+            echo "Error: Unknown disk subcommand."
+            help
+            exit 1
+        fi
+        ;;
 esac
