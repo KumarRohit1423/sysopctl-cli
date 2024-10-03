@@ -33,3 +33,10 @@ function show_help() {
 function show_version() {
     echo "sysopctl version $VERSION"
 }
+
+# Check if no arguments are provided
+if [ $# -eq 0 ]; then
+    echo "Error: No command provided. Please provide a command."
+    echo "Use 'sysopctl --help' to see available commands and options."
+    exit 1
+fi
