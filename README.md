@@ -187,6 +187,20 @@ man sysopctl
 
 ---
 
+## CLI Screenshots
+
+![first](assets/1.PNG)
+
+![second](assets/2.PNG)
+
+![third](assets/3.PNG)
+
+![fourth](assets/4.PNG)
+
+![fifth](assets/5.PNG)
+
+![sixth](assets/6.PNG)
+
 ## Troubleshooting
 
 ### 1\. `-bash: ./sysopctl.sh: cannot execute: required file not found` No Commands Working
