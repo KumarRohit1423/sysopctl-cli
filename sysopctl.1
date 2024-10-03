@@ -1,0 +1,58 @@
+.TH sysopctl 1 "October 2024" "sysopctl v0.1.0" "System Operations Utility"
+.SH NAME
+sysopctl \- A system operations command-line tool.
+.SH SYNOPSIS
+.B sysopctl
+.RI [ command ]
+.RI [ options ]
+.SH DESCRIPTION
+.B sysopctl
+is a command-line tool to manage and monitor system services, disk usage, processes, and logs.
+.SH COMMANDS
+.TP
+.B service list
+List all active services.
+.TP
+.B system load
+Show system load averages.
+.TP
+.B service start <service-name>
+Start a system service.
+.TP
+.B service stop <service-name>
+Stop a system service.
+.TP
+.B disk usage
+Show disk usage statistics.
+.TP
+.B process monitor
+Show real-time process activity.
+.TP
+.B logs analyze
+Show a summary of recent critical logs.
+.TP
+.B backup <path>
+Backup system files from the given path.
+.SH OPTIONS
+.TP
+.B --help
+Display help information.
+.TP
+.B --version
+Show version information.
+.SH EXAMPLES
+.TP
+.B sysopctl service list
+List all active services.
+.TP
+.B sysopctl system load
+Show system load averages.
+.TP
+.B sysopctl disk usage
+Show disk usage statistics.
+.SH AUTHOR
+Written by Rohit Kumar Choudhary.
+.SH "REPORTING BUGS"
+Report bugs to <kumar.rohit.142001@.com>.
+.SH COPYRIGHT
+This is free software.
