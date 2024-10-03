@@ -5,9 +5,7 @@ VERSION="v0.1.0"
 # Helper function to show the help message
 function show_help() {
     echo "sysopctl - A cli-tool designed for managing system resources and tasks."
-    echo ""
     echo "Usage: sysopctl <command> [options]"
-    echo ""
     echo "Commands:"
     echo "    service list                List all active services"
     echo "    system load                 Show system load averages"
@@ -17,16 +15,13 @@ function show_help() {
     echo "    process monitor             Show real-time process activity"
     echo "    logs analyze                Show summary of recent critical logs"
     echo "    backup <path>               Backup files at the given path"
-    echo ""
     echo "Options:"
     echo "    --help                      Show this help message"
     echo "    --version                   Show version information"
-    echo ""
     echo "Examples:"
     echo "    sysopctl service list"
     echo "    sysopctl disk usage"
     echo "    sysopctl process monitor"
-    echo ""
 }
 
 # Function to show version information
@@ -40,3 +35,16 @@ if [ $# -eq 0 ]; then
     echo "Use 'sysopctl --help' to see available commands and options."
     exit 1
 fi
+
+# Check for --help or --version options
+case "$1" in
+    --help)
+        show_help
+        exit 0
+        ;;
+    --version)
+        show_version
+        exit 0
+        ;;
+esac
+
