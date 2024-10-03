@@ -54,7 +54,7 @@ shift # Shift to handle subcommands
 
 # Check for the main command and execute the appropriate subcommand
 case $MAIN_COMMAND in
-    # Part 1 | Level Easy
+    # Part 1 - Level Easy
     service)
         if [ "$1" == "list" ]; then
             echo "Listing all active services..."
@@ -91,7 +91,7 @@ case $MAIN_COMMAND in
         fi
         ;;
 
-    # Part 2 | Level Intermediate
+    # Part 2 - Level Intermediate
     disk)
         if [ "$1" == "usage" ]; then
             echo "Disk usage statistics by partition:"
@@ -103,7 +103,7 @@ case $MAIN_COMMAND in
         fi
         ;;
 
-    # Part 3 | Advanced Level
+    # Part 3 - Advanced Level
     process)
         if [ "$1" == "monitor" ]; then
             echo "Monitoring system processes (press q to quit):"
@@ -132,7 +132,7 @@ case $MAIN_COMMAND in
             exit 1
         fi
         echo "Starting backup for path: $1"
-        rsync -av --progress "$1" /rsync_backup/  # Adjust destination as needed
+        rsync -av --progress "$1" /backup/  # Adjust destination as needed
         echo "Backup completed."
         ;;
 
